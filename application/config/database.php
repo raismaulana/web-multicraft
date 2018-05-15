@@ -74,11 +74,11 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
-	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => '',
-	'password' => '',
-	'database' => '',
+	'dsn'	=> 'pgsql:host=mysql.hostinger.co.id;port=3306;dbname=u949511853_tifb',
+	'hostname' => 'mysql.hostinger.co.id',
+	'username' => 'u949511853_tifb',
+	'password' => 'deka123',
+	'database' => 'u949511853_tifb',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
