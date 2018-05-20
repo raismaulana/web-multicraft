@@ -49,6 +49,10 @@ class Register_model extends CI_Model{
 			return false;
 		}
 	}
+	public function insert_negara($negara, $id_user){
+		$sql = "INSERT INTO alamat (negara, user_id_user) VALUES ('$negara', '$id_user')";
+		$this->db->query($sql);
+	}
 
 
 }

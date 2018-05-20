@@ -31,8 +31,8 @@ class Verify extends CI_Controller
 				$query = $this->Register_model->activate($user, $email);
  				
 				if($query){
-					echo $email;
-				$this->load->view('mregister/verifiberhasil', $email);
+					$data = array('email'=> $email);
+				$this->load->view('mregister/verifiberhasil', $data);
 				// echo "berhasil";
 				}
 				else{
