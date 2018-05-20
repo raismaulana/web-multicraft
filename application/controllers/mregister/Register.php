@@ -7,26 +7,65 @@ require APPPATH . '/libraries/REST_Controller.php';
 class Register extends REST_Controller{
 	public function __construct(){
 		parent::__construct();
+
 		$this->load->model('mregister/Register_model');
+		$this->load->model('mregister/Email_model');
+		$this->load->library('email');
 		$this->load->database();
 	}
-	
 
-	public function index_post(){
+	public function daftar_post(){
+		$tgl_lahir = $this->post('tanggal');
+		$orderdate = explode('/', $tgl_lahir);
+		$day = $orderdate[0];
+		$month   = $orderdate[1];
+		$year  = $orderdate[2];
+		$tanggal = $year."-".$month."-".$day;
+
+		$set = '1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLMNBVCXZ';
+		$kode = substr(str_shuffle($set), 0, 12);
+
 		$data = array(
 			'nama_user' => $this->post('nama'),
 			'email' => $this->post('email'),
 			'password' => $this->post('password'),
 			'no_hp' => $this->post('nohp'),
 			'gender' => $this->post('gender'),
-			'tgl_lahir' => $this->post('tanggal'));
-		$success = $this->Register_model->insert_register_user($data);
-		if($success){
-			$this->response($data, 200);
-		}else{
-			$this->response(array('status'=>'fail',502));
+			'tgl_lahir' => $tanggal,
+			'kode_aktivasi' => $kode
+			);
+		$jumlah = $this->Register_model->select_email($data['email']);
+		/*foreach ($jumlah as $value) {
+			echo "$value <br>";
+		}*/
+		if($jumlah>0)
+		{
+			$this->response(array('status'=>'fail1',502));
+		} 
+		else 
+		{
+
+			$success = $this->Register_model->insert_register_user($data);
+			if($success)
+			{
+				$x = $this->send_mail($data);
+			echo "$x";
+				$this->response($data, 200);
+			} 
+			else 
+			{
+			$this->response(array('status'=>'fail2',502));
+			}
+			
 		}
-	}}
+	}
+
+	public function send_mail($data){
+		$stmt = $this->Email_model->sendVerificationEmail($data);
+		return $stmt;
+	}
+
+}
 
 /*
 	function register_get(){
