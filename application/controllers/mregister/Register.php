@@ -34,6 +34,7 @@ class Register extends REST_Controller{
 			'tgl_lahir' => $tanggal,
 			'kode_aktivasi' => $kode
 			);
+		$negara = $this->post('negara');
 		$jumlah = $this->Register_model->select_email($data['email']);
 		/*foreach ($jumlah as $value) {
 			echo "$value <br>";
@@ -46,6 +47,8 @@ class Register extends REST_Controller{
 		{
 
 			$success = $this->Register_model->insert_register_user($data);
+			$user = $this->Register_model->get_user_byemail($data['email']);
+			$this->Register_model->insert_negara($negara,$user['id_user']);
 			if($success)
 			{
 				$x = $this->send_mail($data);
