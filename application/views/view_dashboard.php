@@ -19,11 +19,16 @@
     <!--external css-->
     <link href="<?php echo base_url();?>assets/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
     <link href="<?php echo base_url();?>assets/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen"/>
-    <link rel="stylesheet" href="assets/css/owl.carousel.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/assets/css/owl.carousel.css" type="text/css">
     <!-- Custom styles for this template -->
     <link href="<?php echo base_url();?>assets/css/style.css" rel="stylesheet">
     <link href="<?php echo base_url();?>assets/css/style-responsive.css" rel="stylesheet" />
     <link href="<?php echo base_url();?>css/slidebars.css" rel="stylesheet">
+
+
+    
+   
+   
 
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
@@ -83,11 +88,10 @@
                           <span>Data Produk</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="<?php echo base_url();?>dashboard/produk">Basic Table</a></li>
-                          <li><a  href="<?php echo base_url();?>content/produk">Responsive Table</a></li>
-                          <li><a  href="dynamic_table.html">Dynamic Table</a></li>
-                          <li><a  href="advanced_table.html">Advanced Table</a></li>
-                          <li><a  href="editable_table.html">Editable Table</a></li>
+                          <li><a  href="<?php echo base_url();?>dashboard/kategori_produk">Kategori Produk</a></li>
+                          <li><a  href="<?php echo base_url();?>dashboard/produk">Produk</a></li>
+                          <li><a  href="<?php echo base_url();?>dashboard/tes">tes</a></li>
+                          
                       </ul>
                   </li>
                   
@@ -101,13 +105,15 @@
 
       <!--main content start-->
       <section id="main-content">
-          <section class="wrapper">
+          <section class="wrapper site-min-height">
               <!--state overview start-->
               
               <?php $this->load->view($content);?>
-
           </section>
       </section>
+
+     
+     
       <!--main content end-->
       <!--footer start-->
       <footer class="site-footer">
@@ -152,6 +158,10 @@
     <script src="<?php echo base_url();?>assets/js/easy-pie-chart.js"></script>
     <script src="<?php echo base_url();?>assets/js/count.js"></script>
     <script src="<?php echo base_url();?>assets/js/editable-table.js"></script>
+
+
+   
+    
 
  
        <!-- END JAVASCRIPTS -->
