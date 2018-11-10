@@ -54,6 +54,12 @@ class Register_model extends CI_Model{
 		$this->db->query($sql);
 	}
 
+	public function insert_keranjang($id_user)
+	{	
+		$sql = "INSERT INTO pesan (user_id_user) VALUES ('$id_user')";
+		$this->db->query($sql);
+	}
+
 
 }
 ?>
