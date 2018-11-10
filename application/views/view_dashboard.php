@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mosaddek">
     <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-    <link rel="shortcut icon" href="<?php echo base_url();?>assets/img/favicon.png">
+    <link rel="shortcut icon" href="<?php echo base_url();?>assets/img/ShortIcon.png">
 
     <title>Home</title>
 
@@ -14,28 +14,17 @@
     <link href="<?php echo base_url();?>assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url();?>assets/css/bootstrap-reset.css" rel="stylesheet">
 
-    <
+    
     <link href="<?php echo base_url();?>assets/assets/data-tables/DT_bootstrap.css" rel="stylesheet">
     <!--external css-->
     <link href="<?php echo base_url();?>assets/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
     <link href="<?php echo base_url();?>assets/assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen"/>
-    <link rel="stylesheet" href="<?php echo base_url();?>assets/assets/css/owl.carousel.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo base_url();?>assets/css/owl.carousel.css" type="text/css">
     <!-- Custom styles for this template -->
     <link href="<?php echo base_url();?>assets/css/style.css" rel="stylesheet">
     <link href="<?php echo base_url();?>assets/css/style-responsive.css" rel="stylesheet" />
-    <link href="<?php echo base_url();?>css/slidebars.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/css/slidebars.css" rel="stylesheet">
 
-
-    
-   
-   
-
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
-    <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
-    <![endif]-->
   </head>
 
   <body>
@@ -47,7 +36,7 @@
                 <div data-original-title="Toggle Navigation" data-placement="right" class="icon-reorder tooltips"></div>
             </div>
             <!--logo start-->
-            <a href="index.html" class="logo">Multicraft<span>Business</span></a>
+            <a href="index.html" class="logo"><img src="<?php echo base_url();?>assets/img/logo.png" width="120px" ></a>
             <!--logo end-->
             
             <div class="top-nav ">
@@ -82,39 +71,56 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
                   
-                  <li class="sub-menu" >
+                  <li class="sub-menu">
                       <a href="javascript:;" >
-                          <i class="icon-th"></i>
-                          <span>Data Produk</span>
+                          <i class="icon-tasks"></i>
+                          <span>Tambah Data</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="<?php echo base_url();?>dashboard/kategori_produk">Kategori Produk</a></li>
-                          <li><a  href="<?php echo base_url();?>dashboard/produk">Produk</a></li>
-                          <li><a  href="<?php echo base_url();?>dashboard/tes">tes</a></li>
-                          
+                          <li><a  href="<?php echo base_url();?>kategori_produk/kategori_produk_tambah">Tambah Kategori</a></li>
+                          <li><a  href="<?php echo base_url();?>produk/produk_tambah">Tambah Produk</a></li>
+                          <li><a  href="<?php echo base_url();?>rekening/rekening_produk_tambah">Tambah Rekening</a></li>
+                          <li><a  href="<?php echo base_url();?>kurir/kurir_produk_tambah">Tambah Kurir</a></li>
                       </ul>
                   </li>
-                  
-                  <!--multi level menu end-->
-
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="icon-th"></i>
+                          <span>Data Tabel</span>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="<?php echo base_url();?>kategori_produk">Data Kategori</a></li>
+                          <li><a  href="<?php echo base_url();?>produk">Data Produk</a></li>
+                          <li><a  href="<?php echo base_url();?>rekening">Data Rekening</a></li>
+                          <li><a  href="<?php echo base_url();?>kurir">Data Kurir</a></li>
+                          <li><a  href="<?php echo base_url();?>user">Data User</a></li>
+                      </ul>
+                  </li>
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="icon-shopping-cart"></i>
+                          <span>Transaksi</span>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="<?php echo base_url();?>pesan">Pesanan</a></li>
+                          <li><a  href="<?php echo base_url();?>pembayaran">Pembayaran</a></li>
+                          <li><a  href="<?php echo base_url();?>pengiriman">Pengiriman</a></li>
+                      </ul>
+                  </li>
               </ul>
               <!-- sidebar menu end-->
           </div>
       </aside>
       <!--sidebar end-->
-
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper site-min-height">
-              <!--state overview start-->
-              
+              <!--state overview start--> 
               <?php $this->load->view($content);?>
+
+              
           </section>
       </section>
-
-     
-     
-      <!--main content end-->
       <!--footer start-->
       <footer class="site-footer">
           <div class="text-center">
@@ -141,39 +147,20 @@
     <script src="<?php echo base_url();?>assets/js/owl.carousel.js" ></script>
     <script src="<?php echo base_url();?>assets/js/jquery.customSelect.min.js" ></script>
     <script src="<?php echo base_url();?>assets/js/respond.min.js" ></script>
-
     <script type="text/javascript" src="<?php echo base_url();?>assets/assets/data-tables/jquery.dataTables.js"></script>
     <script class="include" type="text/javascript" src="<?php echo base_url();?>assets/js/jquery.dcjqaccordion.2.7.js"></script>
     <script type="text/javascript" src="<?php echo base_url();?>assets/assets/data-tables/DT_bootstrap.js"></script>
-    
-
     <!--right slidebar-->
-    <script src="<?php echo base_url();?>js/slidebars.min.js"></script>
-
+    <script src="<?php echo base_url();?>assets/js/slidebars.min.js"></script>
     <!--common script for all pages-->
     <script src="<?php echo base_url();?>assets/js/common-scripts.js"></script>
-
     <!--script for this page-->
     <script src="<?php echo base_url();?>assets/js/sparkline-chart.js"></script>
     <script src="<?php echo base_url();?>assets/js/easy-pie-chart.js"></script>
     <script src="<?php echo base_url();?>assets/js/count.js"></script>
     <script src="<?php echo base_url();?>assets/js/editable-table.js"></script>
 
-
-   
-    
-
- 
-       <!-- END JAVASCRIPTS -->
-      <script>
-          jQuery(document).ready(function() {
-              EditableTable.init();
-          });
-      </script>
-
-
- 
-  <script>
+ <script>
 
       //owl carousel
 
@@ -183,7 +170,7 @@
               slideSpeed : 300,
               paginationSpeed : 400,
               singleItem : true,
-			  autoPlay:true
+        autoPlay:true
 
           });
       });
@@ -196,5 +183,11 @@
 
   </script>
 
+       <!-- END JAVASCRIPTS -->
+      <script>
+          jQuery(document).ready(function() {
+              EditableTable.init();
+          });
+      </script>
   </body>
 </html>

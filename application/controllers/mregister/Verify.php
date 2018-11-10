@@ -31,8 +31,10 @@ class Verify extends CI_Controller
 				$query = $this->Register_model->activate($user, $email);
  				
 				if($query){
+					$this->Register_model->insert_keranjang($user['id_user']);
 					$data = array('email'=> $email);
 				$this->load->view('mregister/verifiberhasil', $data);
+
 				// echo "berhasil";
 				}
 				else{

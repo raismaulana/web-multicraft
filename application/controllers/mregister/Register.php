@@ -41,7 +41,10 @@ class Register extends REST_Controller{
 		}*/
 		if($jumlah>0)
 		{
-			$this->response(array('status'=>'fail1',502));
+			$this->response([
+                    'error' => TRUE,
+                    'error_msg' => 'Email Sudah Dipakai'
+                ]);
 		} 
 		else 
 		{
@@ -52,12 +55,12 @@ class Register extends REST_Controller{
 			if($success)
 			{
 				$x = $this->send_mail($data);
-			echo "$x";
-				$this->response($data, 200);
+			//echo "$x";
+				$this->response(['error' => FALSE, 'user' => $data]);
 			} 
 			else 
 			{
-			$this->response(array('status'=>'fail2',502));
+			$this->response(array('status'=>'fail',502));
 			}
 			
 		}
