@@ -31,10 +31,12 @@ class Login extends CI_controller{
 			foreach ($ceklogin as $row);
 				$this->session->set_userdata('username', $row->username);
 				$this->session->set_userdata('hak_akses', $row->hak_akses);
+				$this->session->set_userdata('status', "login");
 				$data_session = array ('nama' => $username); //inisilisasi data nama_user
 
 				if($this->session->userdata('hak_akses')=="2"){
 					$this->session->set_userdata($data_session); //kirim nama admin
+					
 					redirect(base_url("dashboard"));
 					
 				}else{
